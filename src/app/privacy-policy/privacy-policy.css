@@ -1,0 +1,40 @@
+.privacy-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.privacy-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.privacy-date {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-section {
+  margin-bottom: 1.5rem;
+}
+
+.privacy-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-section-text {
+  margin-bottom: 1rem;
+}
+
+.privacy-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-top: 0.5rem;
+}
+
+.privacy-list-item {
+  margin-top: 0.5rem;
+}

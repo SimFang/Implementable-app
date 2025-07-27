@@ -1,0 +1,78 @@
+.unlocking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .unlocking-summary {
+    margin: 20px 0;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .unlocking-password-input {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .unlocking-button {
+    background-color: #004269;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .unlocking-button:hover {
+    background-color: #006fa1;
+  }
+
+  .unlocking-button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .unlocking-button.loading {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    position: relative;
+  }
+  
+  .unlocking-button.success {
+    background-color: #28a745; /* green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .unlock-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #dc3545; /* red for error */
+  }

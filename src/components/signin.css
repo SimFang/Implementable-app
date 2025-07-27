@@ -1,0 +1,193 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 3rem 1rem;
+}
+
+.signin-box {
+  max-width: 28rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.signin-title {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.signin-form {
+  margin-top: 2rem;
+}
+
+.signin-form-group {
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.signin-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+}
+
+.signin-input:first-child {
+  border-top-left-radius: 0.575rem;
+  border-top-right-radius: 0.575rem;
+}
+
+.signin-input:last-child {
+  border-bottom-left-radius: 0.575rem;
+  border-bottom-right-radius: 0.575rem;
+  margin-top: -1px;
+}
+
+.signin-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.signin-button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1.5rem;
+  font-family: "Aspekta";
+}
+
+.signin-button-primary {
+  background-color: black;
+  color: white;
+  transition: all ease 200ms;
+  cursor: pointer;
+}
+
+.signin-button-primary:hover {
+  transform: scale(1.001);
+}
+
+.signin-button-google {
+
+  cursor: pointer;
+  background-color: #EEEEEE;
+  color: #374151;
+  margin-top: 2rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color ease 200ms;
+}
+
+.signin-button-google:hover {
+  background-color: #d9d9d9;
+}
+
+.signin-google-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.signin-toggle {
+  text-align: center;
+  margin-top: 1rem;
+  width: "100%";
+}
+
+.signin-toggle-button {
+
+  color: #878787;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Aspekta";
+}
+
+.signin-toggle-button:hover {
+  color: #5f5e5e;
+}
+
+.signin-success {
+  padding: 1rem;
+  text-align: center;
+  color: #059669;
+}
+
+.signup-text {
+  border-bottom: #5f5e5e 1px;
+  color: #5f5e5e;
+}
+
+
+/* Label styling */
+.signin-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
+  font-family: "Aspekta";
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.875rem;
+}
+
+/* Input styling */
+.signin-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  font-family: "Aspekta";
+  font-weight: 400;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: all ease 200ms;
+}
+
+.signin-input::placeholder {
+  color: #CECECE;
+  font-family: "Aspekta";
+  font-weight: 400;
+}
+
+
+
+
+.or-separator{
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.or-separator .line {
+  width: 40%;
+  height: 1px;
+  background-color: #DDDDDD;
+}
+.or-separator .or {
+  width: fit-content;
+  color : #DDDDDD;
+}

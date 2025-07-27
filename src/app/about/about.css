@@ -1,0 +1,144 @@
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #111827);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-header {
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.about-logo {
+  font-size: 1.25rem;
+  letter-spacing: 0.025em;
+  font-weight: 300;
+}
+
+.about-nav {
+  display: flex;
+  gap: 2.5rem;
+  color: #e5e7eb;
+}
+
+.about-nav-link {
+  transition: color 0.2s;
+}
+
+.about-nav-link:hover {
+  color: #ffffff;
+}
+
+.about-button {
+  margin-left: auto;
+  background: linear-gradient(to right, #6b7280, #4b5563);
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 4.5rem;
+  font-weight: 200;
+  color: #9ca3af;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.about-mission {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.about-mission-content {
+  flex: 1;
+}
+
+.about-mission-title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.about-mission-text {
+  color: #d1d5db;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.about-mission-highlight {
+  opacity: 0.9;
+}
+
+.about-rocket {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.about-rocket-icon {
+  height: 6rem;
+  width: 6rem;
+  color: #9ca3af;
+}
+
+.about-nav-line {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  height: calc(100vh - 200px);
+  width: 0.125rem;
+  background-color: #9ca3af;
+}
+
+.about-nav-dot {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ffffff;
+  border-radius: 9999px;
+}
+
+.about-fixed-nav {
+  position: fixed;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
+  width: 0.125rem;
+  background-color: #9ca3af;
+  z-index: 10;
+}
+
+.about-fixed-nav-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ffffff;
+  border-radius: 9999px;
+}

@@ -1,0 +1,54 @@
+.profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .profile-heading {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .profile-field-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .profile-textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .profile-confirm-button {
+    margin-top: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .profile-confirm-button:hover {
+    background-color: #0056b3;
+  }

@@ -1,0 +1,118 @@
+.blog-post-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1rem;
+  color: #111;
+}
+
+.blog-post-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-date {
+  text-align: center;
+  color: grey;
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-main-image img {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-author-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blog-post-author-name {
+  font-weight: 600;
+}
+
+.blog-post-author-title {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.blog-post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-big-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.blog-small-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.blog-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blog-quote {
+  border-left: 4px solid #aaa;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #444;
+}
+
+.blog-image-banner img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.blog-caption {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+
+.blog-image-text {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.blog-image-text.left img {
+  order: -1;
+}
+
+.blog-image-text img {
+  width: 40%;
+  border-radius: 0.5rem;
+}
+
+.blog-image-text div {
+  flex: 1;
+}
+
+#btn-go-to-blog {
+  display: block;
+  font: 'Aspekta';
+  margin: 2rem auto 0; /* centers the button with margin on top */
+  font-size: 1rem; /* slightly larger for visibility */
+  font-weight: 300;
+  color: grey; /* dark grey text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  border: none;
+}
+
+#btn-go-to-blog:hover,
+#btn-go-to-blog:focus {
+  color: black;
+  outline: none;
+}

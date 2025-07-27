@@ -1,0 +1,37 @@
+{
+    "paymentInformations": [
+      {
+        "name": "ENTREPRENER",
+        "slug": "entreprener",
+        "proCredits": 1,
+        "price": 70,
+        "currency": "EUR",
+        "emoji": "💶",
+        "productId": "prod_SjrLZ3n4Y9D9PL",
+        "displayPrice": "70 euros 💶",
+        "description": "1 pro credit — great for testing AI implementation"
+      },
+      {
+        "name": "OWNER",
+        "slug": "owner",
+        "proCredits": 12,
+        "price": 400,
+        "currency": "EUR",
+        "emoji": "",
+        "productId": "prod_SjrOBIXAWbHcka",
+        "displayPrice": "400 euros",
+        "description": "12 pro credits — ideal for small business owners"
+      },
+      {
+        "name": "BUSINESS",
+        "slug": "business",
+        "proCredits": 50,
+        "price": 1000,
+        "currency": "EUR",
+        "emoji": "💶",
+        "productId": "prod_SjrPWGo4IqPpW4",
+        "displayPrice": "1000 euros 💶",
+        "description": "50 pro credits — for growing or established businesses"
+      }
+    ]
+  }

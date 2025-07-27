@@ -1,0 +1,10 @@
+.layout-body {
+  font-family: var(--font-aspekta);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+
+.layout-main {
+  margin: 0 auto;
+}

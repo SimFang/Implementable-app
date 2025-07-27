@@ -1,0 +1,107 @@
+.pricing-container {
+  min-height: 100vh;
+  background: linear-gradient(to top right, #ffffff, #e5e7eb, #bfdbfe);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+
+.pricing-content {
+  max-width: 80rem;
+  width: 100%;
+}
+
+.pricing-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.pricing-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #3b82f6, #1d4ed8);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 18rem;
+  color: white;
+}
+
+.pricing-plan.featured {
+  background: linear-gradient(to bottom right, #60a5fa, #3b82f6);
+}
+
+.pricing-plan-label {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.pricing-plan-price {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.9;
+}
+
+.feature-icon {
+  color: #bfdbfe;
+}
+
+.pricing-plan-button {
+  background-color: white;
+  color: #1d4ed8;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.pricing-plan-button:hover {
+  background-color: #f3f4f6;
+}
+
+@media (min-width: 768px) {
+  .pricing-plans {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.pricing-container { padding: 2rem; text-align: center; }
+.pricing-plans { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.pricing-plan { border: 1px solid #ccc; border-radius: 10px; padding: 1.5rem; width: 300px; }
+.pricing-plan-label { font-weight: bold; font-size: 1.2rem; }
+.pricing-plan-price { font-size: 1.5rem; margin: 1rem 0; }
+.pricing-plan-features { list-style: none; padding: 0; text-align: left; }
+.pricing-plan-feature { margin: 0.5rem 0; }
+.pricing-plan-button { background-color: #000; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
+.checkout-button { margin-top: 1rem; background: green; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; }

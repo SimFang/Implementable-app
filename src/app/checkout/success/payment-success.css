@@ -1,0 +1,73 @@
+.ps-container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .ps-loading,
+  .ps-error {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  
+  .ps-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .ps-button:hover {
+    background-color: #45a049;
+  }
+  
+  .ps-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .ps-project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+  }
+  
+  .ps-project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ps-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .ps-info {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .ps-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .ps-info p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .ps-lock-icon {
+    margin-top: 0.5rem;
+    color: #999;
+  }
