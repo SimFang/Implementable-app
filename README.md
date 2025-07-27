@@ -1,8 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and integrated with Firebase for authentication, database, and storage functionality.
 
 ## Getting Started
 
-First, run the development server:
+### Environment Setup
+
+1. Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+2. Update `.env.local` with your Firebase configuration values from your Firebase project settings.
+
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development Server
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -20,17 +39,51 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Firebase Features
+
+This project includes the following Firebase integrations:
+
+### Authentication
+- Email/Password authentication
+- Google Sign-in
+- User session management
+
+### Firestore Database
+- Document creation and management
+- Real-time updates
+- Query capabilities
+
+### Storage
+- File upload and management
+- Secure file access
+- File listing and deletion
+
+### Custom Hooks
+
+The project includes several custom hooks for Firebase functionality:
+
+- `useFirebaseAuth`: Handles authentication operations
+- `useFirestore`: Manages Firestore database operations
+- `useStorage`: Handles Firebase Storage operations
+
+### Example Component
+
+Check out the `FirebaseExample` component in `src/components/FirebaseExample.tsx` for a demonstration of Firebase features.
+
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Next.js Resources
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Firebase Resources
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [Firebase Console](https://console.firebase.google.com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Deploy the Next.js app on [Vercel Platform](https://vercel.com/new).
+2. Configure environment variables in your deployment platform.
+3. Update Firebase project settings with your deployment URL.
+4. Configure Firebase Security Rules for your production environment.
+# web-app
