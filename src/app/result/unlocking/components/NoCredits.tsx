@@ -14,11 +14,23 @@ export default function NoCredits({ credits }: NoCreditsProps) {
   };
 
   return (
-    <div className="no-credits-container">
-      <h1>Not Enough Tokens</h1>
-      <p>Your current balance: <strong>{credits} tokens</strong></p>
-      <p>You need at least 1 token to unlock this AI Strategy Report.</p>
-      <button onClick={handlePricingRedirect} className="unlocking-button">
+    <div className="unlock-container">
+      <h1 className="unlock-title">Not Enough Tokens</h1>
+
+      <div className="unlock-summary">
+        <p><span className="label">Your Balance:</span> <span className="value">{credits} tokens</span></p>
+        <p><span className="label">Required:</span> <span className="value">1 token</span></p>
+      </div>
+
+      <p className="unlock-description">
+        You need at least 1 token to unlock this AI Strategy Report. 
+        Please purchase more tokens to continue.
+      </p>
+
+      <button
+        onClick={handlePricingRedirect}
+        className="unlock-button-pay"
+      >
         Get More Tokens
       </button>
     </div>

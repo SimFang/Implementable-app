@@ -7,8 +7,9 @@ import { fetchUserCredits } from '../../../../helpers/payment/fetchUserCredits';
 import { AnalysisData } from '../../../../types/analysisType';
 import HasCredits from './components/HasCredits';
 import NoCredits from './components/NoCredits';
+import Logo from '@/components/style/Logo';
+import { Sparkles } from 'lucide-react';
 import './unlocking.css';
-
 
 export default function UnlockingPage() {
   const searchParams = useSearchParams();
@@ -16,9 +17,7 @@ export default function UnlockingPage() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [credits, setCredits] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [password, setPassword] = useState('');
-const [unlockMessage, setUnlockMessage] = useState<string | null>(null);
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,21 +33,44 @@ const [unlockMessage, setUnlockMessage] = useState<string | null>(null);
       } catch (err: any) {
         console.error(err);
         setError('Failed to load data');
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
   }, [analysisId]);
 
-  if (error) return <p className="unlocking-error">{error}</p>;
-  if (credits === null || !analysisData) return <p className="unlocking-loading">Loading...</p>;
-
   return (
-    <div className="unlocking-container">
-      {credits > 0 ? (
-        <HasCredits analysisId={analysisId!} analysisData={analysisData} credits={credits} />
-      ) : (
-        <NoCredits credits={credits} />
-      )}
+    <div className="unlocking-page">
+
+      {/* gradient panel on right */}
+
+      <div className="unlocking-container">
+        <div className="unlocking-box">
+          <Logo />
+
+          {loading && <p className="unlocking-loading">Loading...</p>}
+          {error && <p className="unlocking-error">{error}</p>}
+
+          {!loading && !error && analysisData && credits !== null && (
+            <>
+              {credits > 0 ? (
+                <HasCredits
+                  analysisId={analysisId!}
+                  analysisData={analysisData}
+                  credits={credits}
+                />
+              ) : (
+                <NoCredits credits={credits} />
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+
+      <div className="unlocking-gradient"></div>
+
     </div>
   );
 }

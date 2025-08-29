@@ -7,6 +7,7 @@ import type { RootState } from '@/store/store';
 import { sendVerificationCode } from '../../../../helpers/auth/sendVerificationCode';
 import { updateUserField } from '../../../../helpers/auth/updateuserfield';
 import './verify-email.css';
+import Logo from '@/components/style/Logo';
 
 export default function VerifyEmail() {
   const router = useRouter();
@@ -78,7 +79,7 @@ export default function VerifyEmail() {
         }
 
         await updateUserField(userId, 'verifiedEmail', true);
-        router.push('/signup/success');
+        router.push('/signup/complete-profile');
       } else {
         setError('Invalid verification code');
       }
@@ -91,9 +92,11 @@ export default function VerifyEmail() {
 
   return (
     <div className="verify-email-container">
+      <div className='verify-email-box'>
       <div className="verify-email-header">
+        <Logo/>
         <h2 className="verify-email-title">
-          Verify your email
+          Check your inbox
         </h2>
         <p className="verify-email-subtitle">
           We've sent a verification code to {userEmail}
@@ -132,7 +135,7 @@ export default function VerifyEmail() {
                 disabled={loading}
                 className="verify-email-submit"
               >
-                {loading ? 'Verifying...' : 'Verify Email'}
+                {loading ? 'Verifying...' : 'Verify'}
               </button>
             </div>
 
@@ -150,6 +153,7 @@ export default function VerifyEmail() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </div>
   );

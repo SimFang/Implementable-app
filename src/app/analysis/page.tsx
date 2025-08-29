@@ -10,6 +10,7 @@ import Done from './Done';
 import Error from './Error';
 import { createProcess } from '../../../helpers/analysis/createProcess';
 import './analysis.css';
+import SliderAnalysisTransitionPage from '@/components/style/SliderAnalysisTransitionPage.tsx';
 
 
 
@@ -82,6 +83,7 @@ export default function Analysis() {
 
   return (
     <div className="analysis-page-container">
+      <SliderAnalysisTransitionPage step={step} />
       {step === 1 && <Agreement currentStep={step} onStepChange={handleStepChange} processId={processId} onQuestionsFetched={setQuestions}/>}
       
       {step === 2 && <Fetch_Loading url={url} currentStep={step} onStepChange={handleStepChange} processId={processId} />}

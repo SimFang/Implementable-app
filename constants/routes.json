@@ -20,5 +20,6 @@
     "getUserPayment":"/api/payment/get-user-payments",
     "getUserAnalyses":"/api/analysis/get-user-analyses",
     "getUserCredits":"/api/payment/get-user-credits",
-    "unlockAnalysis":"/api/payment/unlock-analysis"
+    "unlockAnalysis":"/api/payment/unlock-analysis",
+    "deleteUser":"/api/users/delete-user"
 }

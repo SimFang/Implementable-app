@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import './analysis.css';
+import './loading2.css';
+import Gradient from '@/components/style/Gradient';
 
 interface AnalysisLoadingProps {
   currentStep: number;
@@ -49,32 +50,41 @@ export default function Analysis_Loading({ currentStep, onStepChange, processId 
 
   return (
     <div className="analysis-step-container">
-      <div className="analysis-loading">
-        <div className="analysis-spinner" />
-        <div>
-          <h2 className="analysis-title">Analyzing Your Website</h2>
-          <p className="analysis-subtitle">{loadingMessages[messageIndex]}</p>
-        </div>
-        <div style={{ width: '100%' }}>
-          <div
-            style={{
-              width: '100%',
-              height: '4px',
-              backgroundColor: '#e5e7eb',
-              borderRadius: '2px',
-              overflow: 'hidden',
-            }}
-          >
-            <div
-              style={{
-                width: `${progress}%`,
-                height: '100%',
-                backgroundColor: '#4f46e5',
-                transition: 'width 0.3s ease-in-out',
-              }}
-            />
+      <Gradient
+        fromColor='#202737'
+        midColor='#829CD7'
+        position="bottom"
+        size="900px"
+        style={{ zIndex: 0, bottom: -200, height: "200vh" }}
+      />
+      <div className="analysis-step-fetchloading-content">
+        <div className="analysis-loading">
+          <div className="loading-circle"></div>
+          <div>
+            <h2 className="analysis-title">
+              {loadingMessages[messageIndex].split('...')[0]}<strong>...</strong>
+            </h2>
+            <div style={{ width: '100%' }}>
+              <div
+                style={{
+                  width: '100%',
+                  height: '4px',
+                  backgroundColor: '#e5e7eb',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                }}
+              >
+                <div
+                  style={{
+                    width: `${progress}%`,
+                    height: '100%',
+                    backgroundColor: '#4f46e5',
+                    transition: 'width 0.3s ease-in-out',
+                  }}
+                />
+              </div>
+            </div>
           </div>
-          <p style={{ marginTop: '0.5rem' }}>{progress}% Complete</p>
         </div>
       </div>
     </div>

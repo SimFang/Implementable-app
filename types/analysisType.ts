@@ -8,6 +8,7 @@ export interface Recommendation {
     implementationConditions: string;
     businessValue: string;
     maturityFit: string;
+    illustration?: string;
   }
   
   export interface StrategicImpactArea {
@@ -31,6 +32,7 @@ export interface Recommendation {
     user_agreement?: boolean;
     userId?: string;
     unlocked?: boolean,
+    illustration?:string
   }
   
   export interface GetAnalysisResponse {

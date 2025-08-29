@@ -1,0 +1,29 @@
+.question-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .question-transition-inner {
+    width: 70%;
+  }
+  
+  .analysis-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .analysis-progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #677DAD, #7F97CD);
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+  }

@@ -1,0 +1,111 @@
+
+
+/* Payment Cancel Page Styles */
+.pc-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem;
+  font-family: 'Aspekta', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background overlay - red theme for cancellation */
+.pc-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #ef4444 100%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Cancel modal card - same dimensions as success modal */
+.pc-cancel-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* X icon */
+.pc-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+
+.pc-icon-inner {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 4px;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+}
+
+/* Typography - same as payment success */
+.pc-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.pc-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Continue button */
+.pc-continue-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Aspekta', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.pc-continue-button:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* Responsive design - same as payment success */
+@media (max-width: 640px) {
+  .pc-container {
+    padding: 1rem;
+  }
+  
+  .pc-cancel-modal {
+    padding: 2rem 1.5rem;
+  }
+}

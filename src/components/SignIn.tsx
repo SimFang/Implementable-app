@@ -40,8 +40,8 @@ export default function SignIn() {
         bio : backendUser.bio,
         country : backendUser.country
       }));
+      router.push("/landing")
 
-      router.push('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     }
@@ -69,11 +69,7 @@ export default function SignIn() {
   };
 
   if (user) {
-    return (
-      <div className="signin-success">
-        <p>Signed in as {user.email}</p>
-      </div>
-    );
+    router.push("/landing")
   }
 
   return (

@@ -63,75 +63,33 @@ export default function HasCredits({ analysisId, analysisData, credits }: HasCre
   const isUnlockEnabled = typedCode === confirmationCode && agreed && !loading && !success;
 
   return (
-    <div className="has-credits-container">
-      <h1>Unlock Your Full AI Strategy Report</h1>
-      <div className="analysis-summary">
-        <h2>{analysisData.output?.strategicImpactAreas[0]?.impactArea}</h2>
-        <p>{analysisData.output?.strategicImpactAreas[0]?.summary}</p>
-      </div>
-      <div className="unlock-details">
-        <p><strong>Price:</strong> {price} token</p>
-        <p><strong>Your Balance:</strong> {credits} tokens</p>
-        <p><strong>New Balance After Unlock:</strong> {newBalance} tokens</p>
-        <p className="unlock-description">
-          Unlock this report to access detailed AI strategy recommendations and business impact insights.
-        </p>
-      </div>
-
-      <p>Please type the following code to confirm:</p>
-      <div
-        style={{
-          fontWeight: 'bold',
-          fontSize: '1.5rem',
-          letterSpacing: '0.2rem',
-          marginBottom: '0.5rem',
-          userSelect: 'all',
-        }}
-      >
-        {confirmationCode}
-      </div>
-
-        <input
-          type="text"
-          placeholder="Type the code here"
-          value={typedCode}
-          onChange={(e) => setTypedCode(e.target.value)}
-          className="unlocking-code-input"
-          style={{ textTransform: 'none' }}
-        />
-
-        {typedCode && typedCode !== confirmationCode && (
-          <p style={{ color: 'red', marginTop: '0.25rem' }}>
-            The code you typed does not match. Please try again.
-          </p>
-        )}
-
-      <label style={{ display: 'block', marginTop: '1rem', cursor: 'pointer' }}>
-        <input
-          type="checkbox"
-          checked={agreed}
-          onChange={(e) => setAgreed(e.target.checked)}
-          style={{ marginRight: '0.5rem' }}
-        />
-        I agree that this operation will remove a token from my balance
-      </label>
-
-      <button
-        onClick={handleUnlock}
-        className={`unlocking-button ${loading ? 'loading' : ''} ${success ? 'success' : ''}`}
-        disabled={!isUnlockEnabled}
-        style={{ marginTop: '1rem' }}
-      >
-        {loading && !success ? (
-          <span className="spinner" />
-        ) : success ? (
-          <CheckCircle size={20} />
-        ) : (
-          'Unlock'
-        )}
-      </button>
-
-      {unlockMessage && <p className="unlock-message">{unlockMessage}</p>}
+    <div className="unlock-container">
+    <h1 className="unlock-title">Unlock Your Analysis</h1>
+  
+    <div className="unlock-summary">
+      <p><span className="label">Price:</span> <span className="value">1 token</span></p>
+      <p><span className="label">Your Balance:</span> <span className="value">{credits} tokens</span></p>
+      <p><span className="label">Balance After Unlock:</span> <span className="value">{credits - 1} tokens</span></p>
     </div>
+  
+    <p className="unlock-description">
+      Access detailed AI strategy recommendations and business impact insights by unlocking this report.
+    </p>
+  
+    <label className="confirmation-label">
+      <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+      I agree that 1 token will be deducted from my balance.
+    </label>
+  
+    <button
+      onClick={handleUnlock}
+      className={`unlock-button-pay ${loading ? 'loading' : ''} ${success ? 'success' : ''}`}
+      disabled={!agreed || loading || success}
+    >
+      {loading ? 'Unlocking...' : success ? 'Unlocked ✓' : 'Unlock'}
+    </button>
+  
+    {unlockMessage && <p className="unlock-message">{unlockMessage}</p>}
+  </div>
   );
 }

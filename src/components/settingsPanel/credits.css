@@ -1,0 +1,112 @@
+.payment-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
+    justify-content: left;
+    padding: 1.5rem;
+  }
+  
+  .payment-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .payment-subheading {
+    font-weight: 400;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #bbb;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .credits-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 2000px;
+    border: 10px solid;
+    border-image: linear-gradient(135deg, #D9D9D9, #829CD7) 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .credits-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .credits-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+  
+  .credits-error {
+    text-align: center;
+    color: #ef4444;
+    margin-top: 1rem;
+  }
+
+  .credits-circle-wrapper {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D9D9D9, #829CD7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .credits-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white; /* inner circle color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .credits-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .credits-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }

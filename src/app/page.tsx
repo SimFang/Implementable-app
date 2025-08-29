@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -9,5 +10,13 @@ export default function Home() {
     router.replace('/landing');
   }, [router]);
 
-  return null;
+  return (
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: 'white',
+      }}
+    />
+  );
 }

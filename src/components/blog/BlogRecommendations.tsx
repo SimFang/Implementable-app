@@ -49,11 +49,14 @@ export default function BlogRecommendations({ currentSlug }: Props) {
 
   return (
     <div className="recommendations-container">
-      <h2 className="recommendations-title">You might also like</h2>
+      <div className='line'></div>
+
+      <h2 className="recommendations-title">Related articles</h2>
 
       {loading ? (
         <div className="recommendations-spinner">Loading recommendations...</div>
       ) : (
+
         <div className="recommendations-slider">
           {recommendations?.map((article) => (
             <div

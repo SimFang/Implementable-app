@@ -1,13 +1,18 @@
 .pricing-container {
-  min-height: 100vh;
-  background: linear-gradient(to top right, #ffffff, #e5e7eb, #bfdbfe);
+  min-height: 120vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: white;
   align-items: center;
   padding: 4rem 1rem;
+  font-family: "Aspekta";
+  position: relative; /* <--- ADD THIS */
+  overflow: hidden;    /* optional: to keep gradient inside */
 }
-
 .pricing-content {
+  margin-top: 20vh;
+  z-index: 1;
   max-width: 80rem;
   width: 100%;
 }
@@ -17,39 +22,78 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
+  color: black;
 }
 
 .pricing-subtitle {
   text-align: center;
-  color: #4b5563;
+  color: #484848;
   margin-bottom: 3rem;
+  font-size: 1.25rem;
+
 }
 
 .pricing-plans {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .pricing-plan {
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right, #3b82f6, #1d4ed8);
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   width: 18rem;
   color: white;
+  transition: all ease 200ms;
+  font-family: "Aspekta";
+}
+.pricing-plan:hover {
+  -webkit-box-shadow: 5px 11px 43px -8px rgba(0,0,0,0.41); 
+  box-shadow: 5px 11px 43px -8px rgba(0,0,0,0.51);
+  transform: translateY(-10px);
 }
 
-.pricing-plan.featured {
-  background: linear-gradient(to bottom right, #60a5fa, #3b82f6);
+.pricing-plan:nth-child(1) {
+  background: linear-gradient(to bottom right, #39548F, #395082,#132140);
+
 }
 
-.pricing-plan-label {
-  font-size: 0.875rem;
+.pricing-plan:nth-child(2) {
+  transform: translateY(-30px);
+  background: linear-gradient(to bottom right, #39548F, #A6C2FF,#7E9EE5);
+
+}
+
+.pricing-plan:nth-child(2):hover {
+  transform: translateY(-40px);
+
+}
+
+
+.pricing-plan:nth-child(3) {
+  background: linear-gradient(to bottom right, #39548F, #395082,#132140);
+
+}
+
+
+
+
+.pricing-plan-status {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  opacity: 0.8;
+  opacity: 0.5;
+}
+
+.pricing-plan-credit {
+  font-size: 2.3rem;
+  font-weight: 600;
 }
 
 .pricing-plan-price {
@@ -96,12 +140,68 @@
   }
 }
 
-.pricing-container { padding: 2rem; text-align: center; }
-.pricing-plans { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.pricing-plan { border: 1px solid #ccc; border-radius: 10px; padding: 1.5rem; width: 300px; }
-.pricing-plan-label { font-weight: bold; font-size: 1.2rem; }
-.pricing-plan-price { font-size: 1.5rem; margin: 1rem 0; }
-.pricing-plan-features { list-style: none; padding: 0; text-align: left; }
-.pricing-plan-feature { margin: 0.5rem 0; }
-.pricing-plan-button { background-color: #000; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
-.checkout-button { margin-top: 1rem; background: green; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; }
+.pricing-container { 
+  padding: 2rem; 
+  text-align: left;
+}
+
+.pricing-plans { 
+  display: flex; 
+  gap: 1rem; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+.pricing-plan { 
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  padding: 1.5rem; 
+  width: 300px; 
+}
+
+.pricing-plan-label { 
+  font-family: "Aspekta";
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem; 
+  font-weight: 600;
+}
+
+.pricing-plan-price { 
+  font-family: "Aspekta";
+  font-size: 2rem;
+  margin: 1rem 0; 
+  font-weight: 300;
+}
+
+.pricing-plan-features { 
+  list-style: none; 
+  padding: 0; 
+  text-align: left; 
+}
+
+.pricing-plan-feature { 
+  margin: 0.5rem 0; 
+}
+
+.pricing-plan-button { 
+  font-family: "Aspekta";
+  background-color: white; 
+  color: black; 
+  padding: 0.5rem 1rem; 
+  border: none; 
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px; 
+  cursor: pointer; 
+}
+
+.checkout-button { 
+  font-family: "Aspekta";
+  margin-top: 1rem; 
+  background: green; 
+  color: white; 
+  padding: 0.5rem 1rem; 
+  border: none; 
+  border-radius: 5px; 
+}

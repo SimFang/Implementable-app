@@ -6,6 +6,7 @@ import { updateUserField } from '../../../../helpers/auth/updateuserfield';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store/store';
 import './complete-profile.css';
+import Logo from '@/components/style/Logo';
 
 export default function CompleteProfile() {
   const router = useRouter();
@@ -50,13 +51,13 @@ export default function CompleteProfile() {
 
   return (
     <div className="complete-profile-container">
+      <div className='complete-profile-box'>
       <div className="complete-profile-header">
+      <Logo/>
+
         <h2 className="complete-profile-title">
           Let's personalize your experience
         </h2>
-        <p className="complete-profile-subtitle">
-          Tell us a bit more about yourself
-        </p>
       </div>
 
       <div className="complete-profile-form-container">
@@ -64,7 +65,7 @@ export default function CompleteProfile() {
           <form className="complete-profile-form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="complete-profile-label">
-                Full Name
+                What's your name ? 
               </label>
               <div className="complete-profile-input-wrapper">
                 <input
@@ -111,11 +112,12 @@ export default function CompleteProfile() {
                 disabled={loading}
                 className="complete-profile-submit"
               >
-                {loading ? 'Saving...' : 'Complete Profile'}
+                {loading ? 'Saving...' : 'Submit'}
               </button>
             </div>
           </form>
         </div>
+      </div>
       </div>
     </div>
   );

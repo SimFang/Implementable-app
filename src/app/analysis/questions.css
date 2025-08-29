@@ -1,0 +1,212 @@
+
+
+
+.analysis-step-container {
+  width: 100vw;
+  min-height: 120vh;
+  height: auto;
+  padding-bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  font-family: 'Aspekta', sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: black;
+}
+
+.analysis-step-content {
+  margin-top: 30vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 33px;
+  padding: 5% 6%;
+  width: 80%;
+  max-width: 700px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  position: relative;
+}
+
+
+
+.analysis-step-content::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 33px;
+  filter: blur(40px);
+  background: linear-gradient(270deg, #829CD7, #6782c2, #7F97CD);
+  background-size: 600% 600%;
+  animation: animatedGlow 6s ease infinite;
+  opacity: 0.5;
+}
+
+@keyframes animatedGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.analysis-title {
+  font-size: 1.25rem;
+  margin-bottom: 3vh;
+  z-index: 5;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+
+}
+
+.analysis-subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  z-index: 5;
+  position: relative;
+}
+
+.analysis-progress-bar {
+  width: 70%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  
+}
+
+.analysis-progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #677DAD, #7F97CD);
+    transition: width 0.3s ease-in-out;
+}
+
+.analysis-question {
+  width: 100%;
+  text-align: left;
+  color: #545454;
+  margin: 12vh 0;
+}
+
+.analysis-question-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  width: 80%;
+}
+
+.analysis-input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  max-width: 80%;
+  text-align: center;
+  background: transparent;
+  font-family: 'Aspekta', sans-serif;
+  border-bottom: 1px solid #aaa;
+  padding: 0.5rem;
+}
+
+.analysis-options {
+  display: flex;
+  flex-wrap: wrap;            /* allows wrapping to new lines */
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-start; /* or center / space-between depending on your layout */
+}
+
+.analysis-option-card {
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all ease 200ms;
+}
+.analysis-option-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+}
+
+.analysis-option-card.selected {
+  background-color: #e0e0e0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+
+}
+
+.analysis-navigation {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem; /* optional — adds space *between* buttons */
+    justify-content: space-between; /* distribute items across full width */
+    width: 100%;
+    align-items: center; /* or center, depending on button height needs */
+  }
+
+.analysis-click-button {
+    color: white;
+    background-color: black;
+    font-family: "Aspekta";
+    font-weight: 400;
+    padding: 3% 7%;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: visible;
+    border: none;
+    transition: all ease 200ms;
+}
+
+.analysis-click-button:not(:disabled):hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.analysis-input {
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    min-width: 100%;
+    text-align: left;
+    background: #F2F2F2;
+    font-family: 'Aspekta', sans-serif;
+    padding: 0.75rem;
+    resize: vertical;
+    
+  }
+
+
+  .analysis-click-button:disabled {
+    color: white;
+    background-color: rgb(195, 195, 195);
+    font-family: "Aspekta";
+    font-weight: 400;
+    padding: 1% 7%;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: visible;
+    border: none;
+  }

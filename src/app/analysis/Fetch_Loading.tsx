@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import './analysis.css';
+import './loading1.css';
+import Gradient from '@/components/style/Gradient';
 
 interface FetchLoadingProps {
   url: string;
@@ -12,29 +13,29 @@ interface FetchLoadingProps {
 
 export default function Fetch_Loading({ url, currentStep, onStepChange, processId }: FetchLoadingProps) {
   useEffect(() => {
-    // Simulate fetching process with a delay
     const timer = setTimeout(() => {
       onStepChange(currentStep + 1);
     }, 3000); // 3 seconds delay for demonstration
 
     return () => clearTimeout(timer);
+
+
   }, [currentStep, onStepChange]);
 
   return (
     <div className="analysis-step-container">
-      <div className="analysis-loading">
-        <div className="analysis-spinner" />
-        <div>
-          <h2 className="analysis-title">Fetching Website Data</h2>
-          <p className="analysis-subtitle">
-            We are currently accessing and analyzing:<br />
-            <strong>{url}</strong>
-          </p>
-        </div>
-        <p>
-          This process typically takes 1-2 minutes.<br />
-          Please don't close this window.
-        </p>
+      <Gradient
+        fromColor='#202737'
+        midColor='#829CD7'
+        position="bottom"
+        size="900px"
+        style={{ zIndex: 0, bottom : -200, height : "200vh" }}
+      />
+      <div className='analysis-step-fetchloading-content'>
+          <div className="analysis-loading">
+            <div className="loading-circle"></div>
+            <h2 className="analysis-title">{"Gathering"}<strong>informations...</strong></h2>
+          </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Define valid size keywords for radial-gradient
 const validSizes = ['closest-side', 'farthest-side', 'closest-corner', 'farthest-corner'];
@@ -9,17 +9,31 @@ export default function Gradient({
   toColor = '#FFFFFF',
   position = 'center',
   size = 'farthest-corner',
-  shape = 'circle', // New prop: 'circle' (default) or 'ellipse'
+  shape = 'circle', // 'circle' (default) or 'ellipse'
   style = {},
+  duration = 0.9, // Animation duration in seconds
 }: {
   fromColor?: string;
   midColor?: string;
   toColor?: string;
   position?: string;
   size?: 'closest-side' | 'farthest-side' | 'closest-corner' | 'farthest-corner' | `${number}px`;
-  shape?: 'circle' | 'ellipse'; // New shape prop
+  shape?: 'circle' | 'ellipse';
   style?: React.CSSProperties;
+  duration?: number;
 }) {
+  const [scale, setScale] = useState(0);
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    // Trigger animation on mount
+    const timeout = setTimeout(() => {
+      setScale(1);
+      setOpacity(1);
+    }, 10);
+    return () => clearTimeout(timeout);
+  }, []);
+
   // Validate size
   const safeSize = validSizes.includes(size) || /^\d+px$/.test(size) ? size : 'farthest-corner';
 
@@ -39,9 +53,13 @@ export default function Gradient({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    zIndex: 4,
-    background: `radial-gradient(${shape} ${safeSize} at ${safePosition}, ${gradientStops})`,
+    zIndex: 2,
     pointerEvents: 'none',
+    background: `radial-gradient(${shape} ${safeSize} at ${safePosition}, ${gradientStops})`,
+    transform: `scale(${scale})`,
+    transformOrigin: safePosition,
+    opacity: opacity,
+    transition: `transform ${duration}s ease-in, opacity ${duration}s ease-in`,
     ...style,
   };
 

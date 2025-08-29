@@ -7,8 +7,8 @@
         "price": 70,
         "currency": "EUR",
         "emoji": "💶",
-        "productId": "prod_SjrLZ3n4Y9D9PL",
-        "displayPrice": "70 euros 💶",
+        "productId": "prod_SxRShzrhP9NGZa",
+        "displayPrice": "70€",
         "description": "1 pro credit — great for testing AI implementation"
       },
       {
@@ -18,8 +18,8 @@
         "price": 400,
         "currency": "EUR",
         "emoji": "",
-        "productId": "prod_SjrOBIXAWbHcka",
-        "displayPrice": "400 euros",
+        "productId": "prod_SxRRlIyuMqTzbb",
+        "displayPrice": "400€",
         "description": "12 pro credits — ideal for small business owners"
       },
       {
@@ -29,8 +29,8 @@
         "price": 1000,
         "currency": "EUR",
         "emoji": "💶",
-        "productId": "prod_SjrPWGo4IqPpW4",
-        "displayPrice": "1000 euros 💶",
+        "productId": "prod_SxRQVqlqCJ8n6R",
+        "displayPrice": "1000€",
         "description": "50 pro credits — for growing or established businesses"
       }
     ]

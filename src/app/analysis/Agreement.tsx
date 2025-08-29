@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import './analysis.css';
-import {acceptAgreement} from "../../../helpers/analysis/acceptAgreement";
+import { motion, AnimatePresence } from 'framer-motion';
+import './agreement.css';
+import { acceptAgreement } from "../../../helpers/analysis/acceptAgreement";
+import Gradient from '@/components/style/Gradient';
+import legal from '../../../constants/legal.json'
 
 interface AgreementProps {
   currentStep: number;
@@ -13,20 +16,22 @@ interface AgreementProps {
 
 export default function Agreement({ currentStep, onStepChange, processId, onQuestionsFetched }: AgreementProps) {
   const [agreed, setAgreed] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleContinue = async () => {
     if (agreed && processId) {
-      onStepChange(currentStep + 1); // Step 1 ➝ Step 2 (Loading) immediately
+      onStepChange(currentStep + 1); 
   
       try {
-        const response = await acceptAgreement(processId); // Fetch questions
+        const response = await acceptAgreement(processId); 
   
         if (response.success) {
-          onQuestionsFetched(response.data?.questions); // Save to parent
-          onStepChange(currentStep + 2); // Step 2 ➝ Step 3
+
+            onQuestionsFetched(response.data?.questions); 
+            onStepChange(currentStep + 2); 
+            
         } else {
           console.error(response.error);
-          // Optional: go back to step 1 or show error
           onStepChange(currentStep); 
         }
       } catch (err) {
@@ -38,40 +43,75 @@ export default function Agreement({ currentStep, onStepChange, processId, onQues
 
   return (
     <div className="analysis-step-container">
-      <h2 className="analysis-title">Terms of Service</h2>
-      <p className="analysis-subtitle">
-        Please read and agree to our terms before proceeding with the analysis
-      </p>
+      <Gradient
+        fromColor='#202737'
+        midColor='#829CD7'
+        position="bottom"
+        size="900px"
+        style={{ zIndex: 0, bottom : -200, height : "200vh" }}
+      />
+      <div className='analysis-step-content'>
 
-      <div className="analysis-agreement">
-        <h3>Analysis Terms and Conditions</h3>
-        <p>By using our AI analysis service, you agree to the following terms:</p>
-        <ul>
-          <li>We will analyze the provided website URL using our AI algorithms</li>
-          <li>The analysis results are for informational purposes only</li>
-          <li>We do not guarantee specific outcomes or recommendations</li>
-          <li>Your website data will be processed according to our privacy policy</li>
-          <li>The analysis may take several minutes to complete</li>
-        </ul>
+          <h2 className="analysis-title">Website Data <strong>Collection & Analysis</strong></h2>
+
+          <div className="analysis-agreement">
+            <motion.div
+              className={`agreement-text-wrapper ${expanded ? 'expanded' : ''}`}
+              initial={false}
+              animate={{ height: expanded ? 'auto' : 100, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setExpanded(!expanded)}
+              style={{ cursor: 'pointer', overflow: 'hidden', position: 'relative' }}
+            >
+              <p>{legal.analysisTermsFirst}</p>
+
+              <AnimatePresence>
+                {expanded && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.1 }}
+                  >
+                    <p>{legal.analysisTermsSecond}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {!expanded && (
+                <div className="fade-overlay" />
+              )}
+            </motion.div>
+
+            <p className="click-to-expand-text">{expanded ? 'Click to collapse terms' : 'Click to read full terms'}</p>
+          </div>
+
+          <div className="analysis-checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="agreement"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+            />
+            <label htmlFor="agreement">I agree to the terms and conditions</label>
+          </div>
+
+          <button
+            className={`analysis-button ${agreed ? 'analysis-button-primary' : 'analysis-button-disabled'}`}
+            onClick={handleContinue}
+            disabled={!agreed}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="analysis-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
       </div>
-
-      <div className="analysis-checkbox-wrapper">
-        <input
-          type="checkbox"
-          id="agreement"
-          checked={agreed}
-          onChange={(e) => setAgreed(e.target.checked)}
-        />
-        <label htmlFor="agreement">I agree to the terms and conditions</label>
-      </div>
-
-      <button
-        className={`analysis-button ${agreed ? 'analysis-button-primary' : 'analysis-button-secondary'}`}
-        onClick={handleContinue}
-        disabled={!agreed}
-      >
-        Continue
-      </button>
     </div>
   );
 }

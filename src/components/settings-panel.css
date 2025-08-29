@@ -24,43 +24,53 @@
     overflow: hidden;
   }
   
-  /* Sidebar navigation */
   .settings-sidebar {
-    width: 200px;
-    background-color: #f9fafb;
-    border-right: 1px solid #e5e7eb;
+    width: 240px;
+    background: #f3f4f6;
     padding: 20px;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
-  .settings-sidebar-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #374151;
+  .settings-section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #BBBBBB;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
   }
   
   .settings-sidebar ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
   
   .settings-sidebar li {
-    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-weight: 400;
+    font-family: "Aspekta";
     cursor: pointer;
-    color: #4b5563;
-    transition: color 0.2s ease;
-  }
-  
-  .settings-sidebar li:hover {
-    color: #1f2937;
+    color: #757575;
+    transition: all 0.2s ease, box-shadow 0.2s ease;
   }
   
   .settings-sidebar li.active {
-    font-weight: bold;
+    background: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     color: #111827;
+    font-weight: 400;
   }
   
+  .settings-sidebar li:hover {
+    background: #e5e7eb;
+  }
   /* Content area */
   .settings-content {
     flex: 1;

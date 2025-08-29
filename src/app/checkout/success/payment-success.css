@@ -1,73 +1,297 @@
+/* Payment Success Page Styles */
 .ps-container {
-    padding: 2rem;
-    text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem;
+  font-family: 'Aspekta', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background overlay */
+.ps-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #7692CF 100%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Success modal card */
+.ps-success-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Diamond icon */
+.ps-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #000000 0%, #3b82f6 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+
+.ps-icon-inner {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 4px;
+  transform: rotate(-45deg);
+}
+
+/* Typography */
+.ps-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.ps-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Continue button */
+.ps-continue-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Aspekta', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.ps-continue-button:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* Loading state */
+.ps-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-size: 1.2rem;
+  color: #6b7280;
+  font-family: 'Aspekta', sans-serif;
+}
+
+/* Projects grid for unlocking */
+.ps-projects-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.ps-projects-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.ps-projects-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.ps-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.ps-project-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ps-project-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+}
+
+.ps-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.ps-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.ps-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.ps-info p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.ps-lock-icon {
+  margin-top: 0.5rem;
+  color: #9ca3af;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .ps-container {
+    padding: 1rem;
   }
   
-  .ps-loading,
-  .ps-error {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 2rem;
+  .ps-success-modal {
+    padding: 2rem 1.5rem;
   }
   
-  .ps-button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .ps-button:hover {
-    background-color: #45a049;
+  .ps-projects-container {
+    padding: 1.5rem;
   }
   
   .ps-projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  .ps-project-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.3s;
+}
+
+
+/* Payment Loading Page Styles */
+.pl-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem;
+  font-family: 'Aspekta', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background overlay - from #7692CF to darker blue */
+.pl-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #7692CF 100%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Loading modal card - same dimensions as success modal */
+.pl-loading-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Spinner */
+.pl-spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pl-spinner-inner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #7692CF;
+  border-radius: 50%;
+  animation: pl-spin 1s linear infinite;
+}
+
+@keyframes pl-spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .ps-project-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .ps-image {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-  }
-  
-  .ps-info {
+}
+
+/* Typography - same as payment success */
+.pl-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.pl-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Responsive design - same as payment success */
+@media (max-width: 640px) {
+  .pl-container {
     padding: 1rem;
-    text-align: left;
   }
   
-  .ps-info h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
+  .pl-loading-modal {
+    padding: 2rem 1.5rem;
   }
-  
-  .ps-info p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .ps-lock-icon {
-    margin-top: 0.5rem;
-    color: #999;
-  }
+}

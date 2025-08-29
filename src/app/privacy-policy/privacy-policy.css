@@ -1,7 +1,12 @@
 .privacy-container {
   max-width: 56rem;
   margin: 0 auto;
+
+
   padding: 3rem 1.5rem;
+  min-height: 100vh;
+  margin-top: 10vh;
+  color: black;
 }
 
 .privacy-title {
@@ -16,6 +21,7 @@
 }
 
 .privacy-section {
+  
   margin-bottom: 1.5rem;
 }
 

@@ -14,6 +14,8 @@ export default function ResultPage() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [showCover, setShowCover] = useState(true);
+
 
   useEffect(() => {
     const fetchAnalysis = async () => {
@@ -24,6 +26,7 @@ export default function ResultPage() {
 
       setLoading(true);
       const result = await getAnalysis(analysisId);
+      console.log(result)
       setLoading(false);
 
       if (result.success && result.data) {
@@ -36,16 +39,27 @@ export default function ResultPage() {
     fetchAnalysis();
   }, [analysisId]);
 
+  useEffect(() => {
+    if (!loading && !error) {
+      // Wait a short moment then fade out
+      const timeout = setTimeout(() => {
+        const cover = document.getElementById('white-screen-cover');
+        if (cover) {
+          cover.style.transition = 'opacity 1s ease';
+          cover.style.opacity = '0';
+          // Remove from DOM after fade out
+          setTimeout(() => setShowCover(false), 1000);
+        }
+      }, 300); // small delay so overlay is visible briefly
+      return () => clearTimeout(timeout);
+    }
+  }, [loading, error]);
+
   return (
     <div className="result-container">
-      <h1 className="result-title">Analysis Summary</h1>
+      {showCover && <div id="white-screen-cover"></div>}
       {loading && <p className="result-loading">Loading analysis data...</p>}
       {error && <p className="result-error">Error: {error}</p>}
-      {analysisId && !loading && !error && (
-        <p className="result-analysis-id">
-          Your analysis ID is: <strong>{analysisId}</strong>
-        </p>
-      )}
       {!loading && !error && analysisData?.output?.strategicImpactAreas && (
         analysisData.unlocked ? (
           <Unlocked analysisData={analysisData} />

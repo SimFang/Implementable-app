@@ -1,10 +1,16 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import './footer.css';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isDarkMode = pathname === '/about';
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${isDarkMode ? 'footer-dark' : ''}`}>
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">

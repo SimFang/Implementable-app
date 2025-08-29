@@ -7,6 +7,7 @@ import { createCheckoutSession } from '../../../../helpers/payment/createCheckou
 import { PaymentProduct } from '../../../../types/paymentTypes';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store/store';
+import WhiteLoading from '@/components/style/WhiteLoading';
 
 export default function Checkout() {
   const params = useParams();
@@ -14,6 +15,8 @@ export default function Checkout() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState<PaymentProduct | null>(null);
+
+  
 
   const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
 
@@ -56,11 +59,7 @@ export default function Checkout() {
   return (
     <div className="checkout-container">
       {loading ? (
-        <div className="checkout-loading">
-          <h2>Preparing your checkout...</h2>
-          <p>Redirecting to payment for <strong>{product.name}</strong> ({product.displayPrice})</p>
-          <div className="spinner" />
-        </div>
+        <WhiteLoading loading={loading}/>
       ) : (
         <div>
           <p>Something went wrong. Please try again.</p>

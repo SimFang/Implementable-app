@@ -1,0 +1,20 @@
+[
+    {
+      "name": "BeTomorrow",
+      "description": "Professional and Qualified",
+      "image": "https://cdn.dribbble.com/userupload/12740006/file/still-2689094ec0963158745cc44da194766d.png?resize=1600x1200",
+      "url": "https://betomorrow.com"
+    },
+    {
+      "name": "Nscale",
+      "description": "The Hyperscaler Engineered for AI",
+      "image": "https://storage.googleapis.com/startupmag-c4bdc.appspot.com/business/nscalecom_2024-12-09T11:10:19+01:00.png",
+      "url": "https://nscale.com"
+    },
+    {
+      "name": "Evodev",
+      "description": "Certified Strategy Experts",
+      "image": "https://cdn.prod.website-files.com/64b8ce5c806237ea7430ce56/64b960f1b08115148ffa5b24_open_graph_preview.webp",
+      "url": "https://evodev.co"
+    }
+  ]

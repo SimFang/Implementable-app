@@ -1,37 +1,10 @@
 .about-container {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #000000, #111827);
+  /* Gradient transitions from dark to white to blend with founder section */
+  background: linear-gradient(to bottom, #0F192F 0%,#080d19 39%, #0F192F 70%, #7786a4 100%);
   color: #ffffff;
   display: flex;
   flex-direction: column;
-}
-
-.about-header {
-  padding: 1.5rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.875rem;
-}
-
-.about-logo {
-  font-size: 1.25rem;
-  letter-spacing: 0.025em;
-  font-weight: 300;
-}
-
-.about-nav {
-  display: flex;
-  gap: 2.5rem;
-  color: #e5e7eb;
-}
-
-.about-nav-link {
-  transition: color 0.2s;
-}
-
-.about-nav-link:hover {
-  color: #ffffff;
 }
 
 .about-button {
@@ -45,6 +18,7 @@
 }
 
 .about-main {
+  height: 100vh;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -55,40 +29,62 @@
 
 .about-title {
   font-size: 4.5rem;
-  font-weight: 200;
-  color: #9ca3af;
+  font-weight: 300;
   letter-spacing: 0.1em;
   line-height: 1.5;
+  overflow: visible;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.about-mission {
-  max-width: 72rem;
+/* Add the radial gradient circle */
+.about-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 30%;
+  z-index: 10;
+  right: calc(80%); /* place it to the right of the text */
+  transform: translateY(-50%);
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #46588064, transparent 70%);
+}
+
+.about-section {
+  min-height: 100vh;
+  width: 100%;
   margin: 0 auto;
-  padding: 5rem 1.5rem;
+  padding: 5rem 10%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
   position: relative;
 }
 
-.about-mission-content {
+.about-section-content {
+  max-width: 50%;
   flex: 1;
+  z-index: 1;
 }
 
-.about-mission-title {
+.about-section-title {
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 2rem;
   color: #ffffff;
 }
 
-.about-mission-text {
+.about-section-text {
   color: #d1d5db;
   font-size: 1.125rem;
   line-height: 1.75;
 }
 
-.about-mission-highlight {
+.about-section-highlight {
   opacity: 0.9;
 }
 
@@ -104,15 +100,16 @@
 }
 
 .about-nav-line {
+  transition: all ease 200ms;
   position: absolute;
   top: 0;
   right: 2.5rem;
   height: calc(100vh - 200px);
   width: 0.125rem;
-  background-color: #9ca3af;
 }
 
 .about-nav-dot {
+  transition: all ease 200ms;
   position: absolute;
   top: 0;
   right: 2.5rem;
@@ -123,22 +120,192 @@
 }
 
 .about-fixed-nav {
+  transition: all ease 200ms;
   position: fixed;
   right: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 50%;
-  width: 0.125rem;
-  background-color: #9ca3af;
+  top: 30vh;
+  bottom: 10vh;
+  width: 2px;
+  background-color: #374151; /* Full line (dark gray or light gray) */
   z-index: 10;
 }
 
-.about-fixed-nav-dot {
+/* The progress fill behind the dot */
+.about-fixed-nav-line-fill {
+  transition: all ease 200ms;
   position: absolute;
   top: 0;
-  right: 0;
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #ffffff;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  transition: height 0.2s ease-out;
+  z-index: 2;
+}
+
+/* The dot that moves with scroll */
+.about-fixed-nav-dot {
+  transition: all ease 200ms;
+  position: absolute;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 3;
+  transition: top 0.2s ease-out;
+}
+
+/* Specific to "Our Mission" section */
+.about-section.mission {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10%;
+  background: radial-gradient(ellipse at right, rgba(65, 85, 124, 0.059), transparent 70%);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Text content container */
+.about-section.mission .about-section-content {
+  max-width: 50%;
+  z-index: 1;
+}
+
+/* Optional: Larger title for more impact */
+.about-section.mission .about-section-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-icon-glow {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  margin-right: 4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-icon-glow::before {
+  content: '';
+  position: absolute;
+  width: 30em;
+  height: 30em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(50, 66, 102, 0.2), transparent 70%);
+  z-index: 0;
+  filter: blur(4px);
+}
+
+.section-icon {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.about-section.whatwedo {
+}
+
+.about-section.vision {
+}
+
+.about-section-founder {
+  background: white;
+  color: #0f192f;
+  min-height: 100vh;
+  padding: 6rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+  font-family: 'Aspekta', sans-serif;
+  overflow: hidden;
+}
+
+.about-section-founder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 80%;
+  height: 100%;
+  background: radial-gradient(circle at right, rgba(15, 25, 47, 0.08), transparent 80%);
+  z-index: 0;
+}
+
+.founder-avatar {
+  width: 8rem;
+  height: 8rem;
+  background: #324266;
+  border-radius: 1rem;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.founder-avatar::after {
+  content: '';
+  position: absolute;
+  left: -40vw;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #324266 0%, transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.founder-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.founder-quote {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #0f192f;
+  max-width: 70%;
+}
+
+.founder-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.founder-name {
+  font-weight: 500;
+}
+
+.founder-role {
+  color: #6b7280;
+}
+
+.about-fixed-nav-dot.dot-light {
+  background-color: #0f192f; /* Matches dark background for contrast */
+}
+
+.about-fixed-nav.dot-light {
+  transition: all ease 200ms;
+  background-color: rgba(0, 0, 0, 0.156);
+}
+
+.about-fixed-nav-line-fill.dot-light {
+  transition: all ease 200ms;
+  background-color: #00000042;
 }

@@ -19,7 +19,7 @@ export default function Landing() {
       openPopup({
         title: 'Login Required',
         description: 'You need to be logged in to start your AI strategy analysis.',
-        imageUrl: 'https://img.freepik.com/free-vector/access-control-system-abstract-concept-illustration_335657-3180.jpg',
+        imageUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMCAxMUgyLjA0OGMuNTAyLTUuMDUzIDQuNzY1LTkgOS45NS05YzUuNTIzIDAgMTAgNC40NzcgMTAgMTBzLTQuNDc3IDEwLTEwIDEwYy01LjE4NSAwLTkuNDQ4LTMuOTQ3LTkuOTUtOWg3Ljk1djNsNS00bC01LTR6Ii8+PC9zdmc+',
         linkUrl: '/signin',
         buttonText: 'Go to Login'
       })

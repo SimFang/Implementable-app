@@ -1,0 +1,259 @@
+/* Container */
+
+* {
+  font-family: "Aspekta";
+}
+
+#backbutton {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 1000px;
+  position: absolute;
+  top: 20vh;
+  left: 93vw;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition : all ease 200ms
+}
+
+#backbutton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#backbutton svg {
+  transform: rotate(-90deg);
+}
+.result-container {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    color: #1A1A1A;
+  }
+
+  .banner-container {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );    padding-bottom: 7vh;
+  }
+  .banner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .banner-title {
+    z-index: 2;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: white;
+    font-weight: 400;
+    font-size: 3rem;
+  }
+  .banner-subtitle {
+    z-index: 2;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  /* Page Title */
+  .result-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Application Header */
+  .result-application-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 2rem;
+  }
+  
+  /* Section: Recommendation Details */
+  .result-recommendation {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .result-recommendation-header {
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+  }
+  
+  /* Recommendation Title (Query: title) */
+  .result-recommendation-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Query: description */
+  .result-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #333;
+
+  }
+  
+  /* Key Metrics Box (ROI + Outcomes) */
+  .result-metrics-container {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    background: #000;
+    color: #fff;
+    border-radius: 2px;
+    padding: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .result-metrics-line {
+    height: 20vh;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.439);
+    margin-left: 5vw;
+    margin-right: 5vw;
+
+  }
+  
+  .result-metric {
+    flex: 1;
+    background-color: black;
+    width: 50%;
+  }
+  
+  .result-metric-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  
+  .result-metric-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 250;
+  }
+  
+  .result-roi-highlight {
+    color: #6BEF8E;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  
+  /* Grid Details (impactLevel, businessFunction, maturityFit) */
+  .result-grid {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem 0;
+    font-family: 'Aspekta', sans-serif;
+  }
+
+  .result-grid-item {
+    border-right: 1px solid #eee;
+    padding-right: 20%;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result-grid-item-title {
+    text-align: center;
+    font-size: 1.5rem; /* Aspekta font size */
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+
+  }
+
+  .result-grid-item-value {
+    text-align: center;
+    min-height: 20vh;
+    font-size: 1.3rem; /* Same size, lighter color */
+    font-weight: 350;
+    color: #777; /* Softer gray tone */
+  }
+    
+  /* Side-by-side Q&A rows (implementationConditions & businessValue) */
+  .result-qa-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    height: 100vh;
+    justify-content: center;
+
+  }
+  
+  .result-qa {
+    height: 30%;
+  }
+  
+  .result-qa-question {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-family: "Aspekta";
+  }
+  
+  .result-qa-answer {
+    width: 40%;
+    font-size: 1.3rem;
+    color: #000000;
+    line-height: 1.6;
+    font-weight: 350;
+  }
+  
+  .result-qa:nth-child(1){
+    border-bottom: 1px solid rgba(211, 211, 211, 0.575);
+  }
+
+  .result-qa:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  /* Fallback & Errors */
+  .result-analysis-id {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
+  .result-error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }

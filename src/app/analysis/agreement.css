@@ -1,0 +1,196 @@
+.analysis-step-container{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Aspekta', sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: black;
+  }
+
+  .analysis-step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    padding: 5% 6%;
+    width: 50%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    z-index: 5;
+    position: relative;
+
+  }
+  
+  .analysis-title {
+
+    font-size: 2rem;
+    margin-bottom: 5vh;
+    z-index: 5;
+    font-weight: 400;
+    position: relative;
+  }
+  
+  .title-medium {
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .title-bold {
+    font-weight: 700;
+    color: #000;
+  }
+  
+  .analysis-step-subtitle {
+    font-size: 1rem;
+    margin-bottom: 50px;
+    font-weight: 400;
+    z-index: 5;
+    position: relative;
+  }
+  
+ 
+  
+  .analysis-step-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+    max-width: 80%;
+    text-align: center;
+    background:  transparent;
+    font-family: 'Aspekta', sans-serif;
+  }
+  
+  .analysis-input::placeholder {
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .analysis-button {
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .analysis-button:hover:not(.disabled) {
+    background: #333;
+  }
+  
+  .analysis-button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .analysis-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    stroke: white;
+
+    z-index: 2;
+  }
+  
+  .analysis-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+    gap: 8px;
+    z-index: 5;
+    position: relative;
+  }
+  
+  .footer-icon {
+    width: 30px;
+    height: 30px;
+    stroke: white;
+  }
+  
+  .footer-text {
+    font-weight: 500;
+    font-family: 'Aspekta', sans-serif;
+  }
+
+  .agreement-text-wrapper {
+    position: relative;
+    max-width: 700px;
+  }
+  
+  .agreement-text-wrapper p {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+  }
+  
+  .fade-overlay {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  }
+  
+  /* Optional small text below the paragraph */
+  .click-to-expand-text {
+    font-size: 0.875rem;
+    color: #c5c5c5;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  .analysis-button-primary {
+    background-color: #111;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .analysis-button-primary:hover {
+    background-color: #333;
+  }
+  
+  .analysis-button-disabled {
+    background-color: #888; /* grey */
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  .analysis-checkbox-wrapper {
+    margin-top: 5%;
+    width: 100%;
+    font-weight: 400;
+  }
+  .analysis-checkbox-wrapper input[type="checkbox"] {
+    width: 22px;             /* bigger size */
+    height: 22px;
+    border: 2px solid black; /* black border */
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-color: white; /* white background inside */
+    accent-color: black;     /* black checkmark */
+  }
+
+  

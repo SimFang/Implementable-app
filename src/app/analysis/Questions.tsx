@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store/store';
-import './analysis.css';
+import './questions.css'
 import { updateProcessInput as sendAnswers } from '../../../helpers/analysis/sendAnswers';
 import { useRouter } from 'next/navigation';
+import Gradient from '@/components/style/Gradient';
 
 interface Question {
   question: string;
@@ -37,6 +38,7 @@ export default function Questions({
   const [otherText, setOtherText] = useState<string>('');
   const otherInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter()
+  const questionRef = useRef<HTMLDivElement>(null);
 
   // Retrieve userId from Redux store
   const { user } = useSelector((state: RootState) => state.auth);
@@ -122,6 +124,9 @@ export default function Questions({
 
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((i) => i + 1);
+      setTimeout(() => {
+        questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100); // slight delay ensures DOM is updated
     } else {
       onStepChange(currentStep + 1);
 
@@ -165,84 +170,112 @@ export default function Questions({
   }, [answers]);
 
   return (
-    <div className="analysis-step-container">
-      <h2 className="analysis-title">Help Us Understand Your Needs</h2>
-      <p className="analysis-subtitle">
-        Question {currentQuestionIndex + 1} of {totalQuestions}
-      </p>
+    <div className="analysis-step-container" ref={questionRef}>
+      <Gradient
+        fromColor='#202737'
+        midColor='#829CD7'
+        position="bottom"
+        size="900px"
+        style={{ zIndex: 0, bottom : -200, height : "200vh" }}
+      />
+        <div className="analysis-step-content">
+          <div className='analysis-box-content'>
+          <h2 className="analysis-title" >Help Us Understand Your Needs</h2>
+          
 
-      <div className="analysis-progress-bar">
-        <div className="analysis-progress-fill" style={{ width: `${progress}%` }} />
-      </div>
+          <div className="analysis-question">
+            <h3 className="analysis-question-title">{question.question}</h3>
 
-      <div className="analysis-question">
-        <h3 className="analysis-question-title">{question.question}</h3>
+            {isOpen && (
+              <textarea
+                className="analysis-input"
+                value={(currentAnswer as string) || ''}
+                onChange={(e) => handleOpenAnswerChange(e.target.value)}
+                rows={4}
+              />
+            )}
 
-        {isOpen && (
-          <input
-            type="text"
-            className="analysis-input"
-            value={(currentAnswer as string) || ''}
-            onChange={(e) => handleOpenAnswerChange(e.target.value)}
-          />
-        )}
+            {isMCQ && (
+              <div className="analysis-options">
+                {question.possibilities.map((option, idx) => {
+                  const isSelected = Array.isArray(currentAnswer)
+                    ? currentAnswer.includes(option) || currentAnswer.includes(otherText)
+                    : currentAnswer === option || (option === 'Other (please specify)' && otherText);
 
-        {isMCQ && (
-          <div className="analysis-options">
-            {question.possibilities.map((option, idx) => {
-              const isSelected = Array.isArray(currentAnswer)
-                ? currentAnswer.includes(option) || currentAnswer.includes(otherText)
-                : currentAnswer === option || (option === 'Other (please specify)' && otherText);
+                  return (
+                    <div
+                      key={idx}
+                      className={`analysis-option-card ${isSelected ? 'selected' : ''}`}
+                      onClick={(e) => handleMCQChange(option, e)}
+                    >
+                      {option}
 
-              return (
-                <div
-                  key={idx}
-                  className={`analysis-option-card ${isSelected ? 'selected' : ''}`}
-                  onClick={(e) => handleMCQChange(option, e)}
-                >
-                  {option}
-
-                  {option === 'Other (please specify)' && isSelected && (
-                    <input
-                      ref={otherInputRef}
-                      type="text"
-                      className="analysis-input"
-                      placeholder="Please specify..."
-                      value={otherText}
-                      onClick={(e) => e.stopPropagation()}
-                      onFocus={(e) => e.stopPropagation()}
-                      onChange={handleOtherInputChange}
-                      onKeyDown={(e) => e.stopPropagation()}
-                      autoFocus
-                      style={{ marginTop: '0.5rem' }}
-                    />
-                  )}
-                </div>
-              );
-            })}
+                      {option === 'Other (please specify)' && isSelected && (
+                        <input
+                          ref={otherInputRef}
+                          type="text"
+                          className="analysis-input"
+                          placeholder="Please specify..."
+                          value={otherText}
+                          onClick={(e) => e.stopPropagation()}
+                          onFocus={(e) => e.stopPropagation()}
+                          onChange={handleOtherInputChange}
+                          onKeyDown={(e) => e.stopPropagation()}
+                          autoFocus
+                          style={{ marginTop: '0.5rem' }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className="analysis-navigation">
-        <button
-          className="analysis-button"
-          onClick={handlePrevious}
-          disabled={currentQuestionIndex === 0}
-        >
-          Back
-        </button>
-        <button
-          className="analysis-button analysis-button-primary"
-          onClick={handleNext}
-          disabled={
-            isOpen && !currentAnswer ||
-            (isMCQ && (!currentAnswer || (Array.isArray(currentAnswer) && currentAnswer.length === 0)))
-          }
-        >
-          {currentQuestionIndex === totalQuestions - 1 ? 'Finish' : 'Next'}
-        </button>
+         
+
+          <div className="analysis-navigation">
+            <div className="analysis-progress-bar">
+              <div className="analysis-progress-fill" style={{ width: `${progress}%` }} />
+            </div>
+
+            {/* <button
+              className="analysis-button"
+              onClick={handlePrevious}
+              disabled={currentQuestionIndex === 0}
+            >
+              Back
+            </button> */}
+
+
+            {/* <button
+              className="analysis-button analysis-button-primary"
+              onClick={handleNext}
+              disabled={
+                isOpen && !currentAnswer ||
+                (isMCQ && (!currentAnswer || (Array.isArray(currentAnswer) && currentAnswer.length === 0)))
+              }
+            >
+              {currentQuestionIndex === totalQuestions - 1 ? 'Finish' : 'Next'}
+            </button> */}
+
+            <button  
+            
+            onClick={handleNext}
+            className='analysis-click-button'
+              disabled={
+                isOpen && !currentAnswer ||
+                (isMCQ && (!currentAnswer || (Array.isArray(currentAnswer) && currentAnswer.length === 0)))
+              }>
+                {currentQuestionIndex === totalQuestions - 1 ? 'Finish' : 'Next'}
+            </button>
+
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+
+  

@@ -4,6 +4,7 @@ import routes from '../../constants/routes.json';
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export async function createCheckoutSession(email, productId, customerId) {
+  console.log(productId)
   try {
     const response = await fetch(routes.serverUrl + routes.createCheckout, {
       method: 'POST',
