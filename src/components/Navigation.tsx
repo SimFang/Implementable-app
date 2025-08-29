@@ -53,7 +53,7 @@ export default function Navigation() {
           <div className="nav-content">
             {!isResultPage && (
               <div className="nav-logo">
-                <Link href="/">LOGO</Link>
+                <Link href="/">IMPLEMENTABLE</Link>
               </div>
             )}
 
