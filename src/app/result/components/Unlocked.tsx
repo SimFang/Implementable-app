@@ -139,9 +139,9 @@ export default function Unlocked({ analysisData }: Props) {
                       alt={rec.title}
                     />
                     <h5 className="result-slider-item-title">{rec.title}</h5>
-                    <p className="result-slider-item-description">
+                    <div className="result-slider-item-description">
                       <ExpandableText text={rec.description} limit={100} />
-                    </p>
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>

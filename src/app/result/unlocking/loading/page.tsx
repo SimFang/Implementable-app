@@ -5,15 +5,10 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './unlocking-loading.css';
 
-export default function UnlockingLoadingPage({
-  lockBodyColor = '#1d4ed8',
-  lockShackleColor = '#2563eb',
-  lockKeyholeColor = '#f3f4f6',
-}: {
-  lockBodyColor?: string;
-  lockShackleColor?: string;
-  lockKeyholeColor?: string;
-}) {
+export default function UnlockingLoadingPage() {
+  const lockBodyColor = '#1d4ed8';
+  const lockShackleColor = '#2563eb';
+  const lockKeyholeColor = '#f3f4f6';
   const router = useRouter();
   const searchParams = useSearchParams();
   const analysisId = searchParams.get('analysisId');

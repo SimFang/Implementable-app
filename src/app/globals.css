@@ -1,23 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #000000;
   }
 }
 
-@layer base {
-  html {
-    font-family: var(--font-aspekta), system-ui, sans-serif;
-  }
+html {
+  font-family: var(--font-aspekta), system-ui, sans-serif;
 }
 
 body {
@@ -39,10 +33,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

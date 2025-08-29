@@ -37,9 +37,9 @@ export function ExpandableText({ text, limit = 100 }: ExpandableTextProps) {
       transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
       <div ref={fullRef}>
-        <p className="result-slider-item-description">
+        <div className="result-slider-item-description">
           {expanded || !isTruncated ? text : preview}
-        </p>
+        </div>
       </div>
 
       {/* Fade effect at the bottom */}

@@ -5,9 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }
 
 .hero-section {
+  color: black;
+
   position: relative;
   height: 70vh; /* Explicit height to ensure the section is visible */
   width: 100%;
@@ -26,9 +29,12 @@
   align-items: flex-start; /* Changed to flex-start for consistency */
   padding-left: 10%;
   padding-right: 10%;
+  color: black;
+
 }
 
 .hero-background {
+  color: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -223,9 +229,15 @@
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  overflow: hidden;
+  overflow-x: auto; /* enable horizontal scrolling */
   cursor: grab;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  scrollbar-width: none; /* Firefox */
+}
 
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.result-recommendations::-webkit-scrollbar {
+  display: none;
 }
 
 /* === Card Styling === */
@@ -333,6 +345,7 @@
 
 .carousel-btn {
   background: white;
+  color: black;
   border: 1px solid #ccc;
   border-radius: 9999px;
   width: 50px;

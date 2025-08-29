@@ -68,7 +68,7 @@ function ContentBlockRenderer({ block, index }: { block: ContentBlock; index: nu
   }
 }
 
-export function SummaryPanel({
+function SummaryPanel({
   titles,
 }: {
   titles: { bigTitle: string; index: number; smallTitles: { text: string; index: number }[] }[];
